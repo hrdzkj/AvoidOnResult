@@ -348,3 +348,25 @@ public class ActivityThreadCallbackHook {
 1. fragment 版本是稳定性，易用性最好的
 2. BaseActivity 那种其次
 3. Hook 不建议线上使用，一是兼容性，二是各种插件化等 hook 相互影响，问题排插难度大
+
+https://www.jianshu.com/p/59100ae215ef
+https://www.jianshu.com/p/5a9e8e9f25e5
+https://juejin.im/entry/590ad89644d904006d900742/
+ ├── Permission.java。--封装了的权限的基类，包含权限名称，是否授权等
+                ├── RxPermissions.java --核心处理类，进行rxjava转换
+                └── RxPermissionsFragment.java --实际权限请求的Fragmen
+
+
+ EventBus--
+ https://edu.csdn.net/course/play/8057
+ https://edu.csdn.net/course/detail/7581
+
+ EventBus核心原理及其手写实现
+ https://v.youku.com/v_show/id_XMjkwMTYyNDk3Mg==.html
+
+ 功能编号，用在一个文件里面  protected static final int EVENT_RADIO_AVAILABLE = BASE + 1;
+ // 两种方式：1）intent传递功能号，2）定义一个文件专门放置功能号
+ //业务：有可能需要通知多个事件--故应该采用2）
+
+
+  adb -s R8V7N15723023531 install Documents/project/SafeCityAs/doc/release/app-0621.apk

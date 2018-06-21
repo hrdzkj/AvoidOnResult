@@ -1,24 +1,34 @@
 package io.github.anotherjack.avoidonresultdemo;
 
 import android.app.Application;
+import android.content.Context;
 
 import com.squareup.leakcanary.LeakCanary;
+import com.squareup.leakcanary.RefWatcher;
 
 /**
  * Created by grid on 18/6/18.
  */
 
 public class ExampleApplication extends Application {
-    @Override public void onCreate() {
+    private RefWatcher refWatcher;
+
+    @Override
+    public void onCreate() {
         super.onCreate();
-        if (LeakCanary.isInAnalyzerProcess(this)) {
-            // This process is dedicated to LeakCanary for heap analysis.
-            // You should not init your app in this process.
-
-
-            return;
-        }
-        LeakCanary.install(this);
+        refWatcher= setupLeakCanary();
         // Normal app init code...
+    }
+
+    private RefWatcher setupLeakCanary() {
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            return RefWatcher.DISABLED;
+        }
+        return Constants.DEBUG ?  LeakCanary.install(this) : RefWatcher.DISABLED;
+    }
+
+    public static RefWatcher getRefWatcher(Context context) {
+        ExampleApplication application = (ExampleApplication) context.getApplicationContext();
+        return application.refWatcher;
     }
 }
