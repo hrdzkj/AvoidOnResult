@@ -368,5 +368,7 @@ https://juejin.im/entry/590ad89644d904006d900742/
  // 两种方式：1）intent传递功能号，2）定义一个文件专门放置功能号
  //业务：有可能需要通知多个事件--故应该采用2）
 
+//rxjava
+https://juejin.im/post/59083e4da22b9d0065f2f5ea
 
   adb -s R8V7N15723023531 install Documents/project/SafeCityAs/doc/release/app-0621.apk
