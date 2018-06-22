@@ -12,7 +12,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:launchMode="singleTask">
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.Base">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -20,10 +21,12 @@
         </activity>
         <activity
             android:name=".FetchDataActivity"
-            android:launchMode="singleTask" />
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.Base"/>
         <activity
             android:name=".FisrtAcitivity"
-            android:launchMode="singleTask" />
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.Base"/>
     </application>
 
 </manifest>
